@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     let images = ["https://homepages.cae.wisc.edu/~ece533/images/boat.png",
-        "https://homepages.cae.wisc.edu/~ece533/images/cat.png",
-        "https://homepages.cae.wisc.edu/~ece533/images/fruits.png"
+                  "https://homepages.cae.wisc.edu/~ece533/images/fruits.png",
+                  "https://homepages.cae.wisc.edu/~ece533/images/cat.png"
     ]
     var body: some View {
-        Carousel(images: images)
+        CarouselGesture(images: images)
     }
 }
 
