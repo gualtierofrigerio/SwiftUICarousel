@@ -14,7 +14,7 @@ struct ContentView: View {
                   "https://homepages.cae.wisc.edu/~ece533/images/cat.png"
     ]
     var body: some View {
-        CarouselGesture(images: images)
+        CarouselViewGesture(images: images)
     }
 }
 

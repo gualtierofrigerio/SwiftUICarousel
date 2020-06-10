@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2578F060248E8EDE0000BCCD /* CarouselViewGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2578F05F248E8EDE0000BCCD /* CarouselViewGesture.swift */; };
 		259623D9248410C600EA15A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623D8248410C600EA15A3 /* AppDelegate.swift */; };
 		259623DB248410C600EA15A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623DA248410C600EA15A3 /* SceneDelegate.swift */; };
 		259623DD248410C600EA15A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623DC248410C600EA15A3 /* ContentView.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2578F05F248E8EDE0000BCCD /* CarouselViewGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewGesture.swift; sourceTree = "<group>"; };
 		259623D5248410C600EA15A3 /* SwiftUICarousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICarousel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		259623D8248410C600EA15A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		259623DA248410C600EA15A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				259623E6248410C800EA15A3 /* Info.plist */,
 				259623E0248410C800EA15A3 /* Preview Content */,
 				259DD57E248D27AA0054CDF7 /* Carousel.swift */,
+				2578F05F248E8EDE0000BCCD /* CarouselViewGesture.swift */,
 				259623F02484132200EA15A3 /* ImageLoader.swift */,
 				259623EE2484119100EA15A3 /* ImageView.swift */,
 			);
@@ -155,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2578F060248E8EDE0000BCCD /* CarouselViewGesture.swift in Sources */,
 				259623D9248410C600EA15A3 /* AppDelegate.swift in Sources */,
 				259623EF2484119100EA15A3 /* ImageView.swift in Sources */,
 				259623F12484132200EA15A3 /* ImageLoader.swift in Sources */,
