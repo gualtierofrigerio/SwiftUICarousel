@@ -9,25 +9,14 @@
 import SwiftUI
 
 struct CarouselViewGesture: View {
-    @State private var currentIndex: Int = 0
-    @GestureState private var translation: CGFloat = 0
-    
     var images:[String]
-    
-    var dragGesture: some Gesture {
-        DragGesture().updating(self.$translation) { value, state, _ in
-            state = value.translation.width
-        }.onEnded { value in
-            self.updateCurrentIndex(translationWidth: value.translation.width)
-        }
-    }
     
     var body: some View {
         GeometryReader { outerView in
             HStack {
                 ForEach(self.images, id:\.self) { image in
                     ImageView(withURL: image)
-                        .frame(width:outerView.size.width)
+                        .frame(width: outerView.size.width)
                 }
             }
             .frame(width: outerView.size.width, alignment: .leading)
@@ -36,6 +25,19 @@ struct CarouselViewGesture: View {
             .animation(.interactiveSpring())
         }
         .gesture(dragGesture)
+    }
+    
+    // MARK: - Private
+    
+    @State private var currentIndex: Int = 0
+    @GestureState private var translation: CGFloat = 0
+    
+    private var dragGesture: some Gesture {
+        DragGesture().updating(self.$translation) { value, state, _ in
+            state = value.translation.width
+        }.onEnded { value in
+            self.updateCurrentIndex(translationWidth: value.translation.width)
+        }
     }
     
     private func updateCurrentIndex(translationWidth:CGFloat) {
