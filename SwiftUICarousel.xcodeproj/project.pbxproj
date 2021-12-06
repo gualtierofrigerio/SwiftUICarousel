@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2578F060248E8EDE0000BCCD /* CarouselViewGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2578F05F248E8EDE0000BCCD /* CarouselViewGesture.swift */; };
+		258D2CCE275E4FCA006B4BF3 /* GFImageView in Frameworks */ = {isa = PBXBuildFile; productRef = 258D2CCD275E4FCA006B4BF3 /* GFImageView */; };
 		259623D9248410C600EA15A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623D8248410C600EA15A3 /* AppDelegate.swift */; };
 		259623DB248410C600EA15A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623DA248410C600EA15A3 /* SceneDelegate.swift */; };
 		259623DD248410C600EA15A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 259623DC248410C600EA15A3 /* ContentView.swift */; };
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				258D2CCE275E4FCA006B4BF3 /* GFImageView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +105,9 @@
 			dependencies = (
 			);
 			name = SwiftUICarousel;
+			packageProductDependencies = (
+				258D2CCD275E4FCA006B4BF3 /* GFImageView */,
+			);
 			productName = SwiftUICarousel;
 			productReference = 259623D5248410C600EA15A3 /* SwiftUICarousel.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +136,9 @@
 				Base,
 			);
 			mainGroup = 259623CC248410C600EA15A3;
+			packageReferences = (
+				258D2CCC275E4FCA006B4BF3 /* XCRemoteSwiftPackageReference "GFImageView" */,
+			);
 			productRefGroup = 259623D6248410C600EA15A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +364,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		258D2CCC275E4FCA006B4BF3 /* XCRemoteSwiftPackageReference "GFImageView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gualtierofrigerio/GFImageView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		258D2CCD275E4FCA006B4BF3 /* GFImageView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 258D2CCC275E4FCA006B4BF3 /* XCRemoteSwiftPackageReference "GFImageView" */;
+			productName = GFImageView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 259623CD248410C600EA15A3 /* Project object */;
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gualtiero Frigerio. All rights reserved.
 //
 
+import GFImageView
 import SwiftUI
 
 struct CarouselViewGesture: View {
@@ -15,7 +16,7 @@ struct CarouselViewGesture: View {
         GeometryReader { outerView in
             HStack {
                 ForEach(self.images, id:\.self) { image in
-                    ImageView(withURL: image)
+                    GFImageView(imageUrl: URL(string: image), placeHolderImage: nil)
                         .frame(width: outerView.size.width)
                 }
             }

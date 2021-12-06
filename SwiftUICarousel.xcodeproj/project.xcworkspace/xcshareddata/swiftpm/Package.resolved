@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "GFImageView",
+        "repositoryURL": "https://github.com/gualtierofrigerio/GFImageView",
+        "state": {
+          "branch": "master",
+          "revision": "267ee212c19c4ef3cbfc0d35a2d1a16a2432bcc2",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
