@@ -17,14 +17,14 @@ struct CarouselViewGesture: View {
         GeometryReader { outerView in
             VStack {
                 HStack {
-                    ForEach(self.images, id:\.self) { image in
+                    ForEach(activeImages, id:\.self) { image in
                         GFImageView(imageUrl: URL(string: image), placeHolderImage: nil)
                             .frame(width: outerView.size.width)
                     }
                 }
                 .frame(width: outerView.size.width, alignment: .leading)
-                .offset(x: -CGFloat(self.currentIndex) * outerView.size.width)
-                .offset(x:CGFloat(self.translation))
+                .offset(x: -CGFloat(currentIndex) * outerView.size.width)
+                .offset(x: CGFloat(translation))
                 .animation(.interactiveSpring())
                 if showDots {
                     dots
@@ -32,11 +32,15 @@ struct CarouselViewGesture: View {
             }
         }
         .gesture(dragGesture)
+        .onAppear {
+            resetActiveImages()
+        }
     }
     
     // MARK: - Private
     
     @State private var currentIndex: Int = 0
+    @State private var activeImages: [String] = []
     @GestureState private var translation: CGFloat = 0
     
     private var dots: some View {
@@ -48,7 +52,7 @@ struct CarouselViewGesture: View {
     }
     
     private var dragGesture: some Gesture {
-        DragGesture().updating(self.$translation) { value, state, _ in
+        DragGesture().updating($translation) { value, state, _ in
             state = value.translation.width
         }.onEnded { value in
             self.updateCurrentIndex(translationWidth: value.translation.width)
@@ -62,6 +66,25 @@ struct CarouselViewGesture: View {
         }
         if currentIndex >= images.count {
             currentIndex = images.count - 1
+        }
+        updateActiveImages()
+    }
+    
+    private func resetActiveImages() {
+        currentIndex = 0
+        activeImages = []
+        if images.count > 0 {
+            activeImages.append(images[0])
+        }
+        updateActiveImages()
+    }
+    
+    private func updateActiveImages() {
+        for i in 1..<3 {
+            if  (activeImages.count <= currentIndex + i) &&
+                (images.count > currentIndex + i) {
+                activeImages.append(images[currentIndex + i])
+            }
         }
     }
 }
